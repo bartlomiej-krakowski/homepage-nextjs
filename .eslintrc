@@ -105,7 +105,11 @@
           {
             "pattern": "@layout",
             "group": "sibling"
+<<<<<<< HEAD
           },
+=======
+          }
+>>>>>>> 9c8f3bc01aa4914ac4504b6b7aa5bdaa766fa34d
         ]
       }
     ]
