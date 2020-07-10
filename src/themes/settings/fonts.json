@@ -1,0 +1,22 @@
+{
+  "typefaces": {
+    "primary": "'Graphik Web', BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+    "secondary": "'Lora', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', Times, serif",
+    "monospace": "'Droid Sans Mono', 'Lucida Console', Monaco, monospace"
+  },
+  "variants": {
+    "thin": 300,
+    "regular": 400,
+    "medium": 500,
+    "semiBold": 600,
+    "bold": 800
+  },
+  "sizes": {
+    "xxsmall": "12px",
+    "xsmall": "14px",
+    "small": "16px",
+    "medium": "18px",
+    "large": "20px",
+    "xlarge": "24px"
+  }
+}
