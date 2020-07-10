@@ -1,0 +1,11 @@
+{
+  "neutral": "#ffffff",
+  "background": "#1A1C1D",
+  "border": "string",
+  "text": "string",
+  "link": "string",
+  "linkHover": "string",
+  "primary": "#53bd95",
+  "secondary": "string",
+  "tertiary": "string"
+}
