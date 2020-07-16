@@ -11,13 +11,10 @@ export const NormalizeStyle = createGlobalStyle`
   body {
     margin: 0;
     overflow-x: hidden;
-    background-color: ${props => props.theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
   }
-
-  *::selection {
-    background: #e2e5ef;
-  }
-
+  
   *,
   *::before,
   *::after {
