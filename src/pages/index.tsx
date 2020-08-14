@@ -1,6 +1,9 @@
+import { Cursor } from '@components/Cursor/Cursor'
+
 export default () => (
   <div>
     <h1>Simple Storybook Example</h1>
+    <Cursor />
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae recusandae maxime itaque officiis rem totam alias, non error blanditiis quibusdam laudantium impedit deserunt saepe ut facere beatae dignissimos distinctio nobis.
     Consequuntur amet quisquam impedit laborum blanditiis fugiat magni eius cupiditate ex atque, mollitia tenetur pariatur iste? Est quod delectus illum eius atque, debitis aspernatur ut error neque iure? Facere, dicta.
     Deleniti distinctio provident cumque asperiores hic beatae, at sint alias doloremque aspernatur fuga ex dolorem quas labore nulla voluptatum minima laborum cupiditate quod illo quis assumenda voluptas possimus repellendus? Laborum.
