@@ -7,6 +7,7 @@ declare module 'styled-components' {
       background: string;
       border: string;
       text: string;
+      textReverse: string;
       link: string;
       linkHover: string;
       primary: string;

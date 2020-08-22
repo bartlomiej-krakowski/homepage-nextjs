@@ -3,6 +3,7 @@
   "background": "#1A1C1D",
   "border": "string",
   "text": "#ffffff",
+  "textReverse": "#1A1C1D",
   "link": "#ffffff",
   "linkHover": "#ffffff",
   "primary": "#53bd95",

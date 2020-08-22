@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"],
       "@static/*": ["src/static/*"],
       "@context/*": ["src/context/*"],
       "@hooks/*": ["src/hooks/*"],
