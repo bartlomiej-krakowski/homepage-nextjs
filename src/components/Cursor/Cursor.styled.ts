@@ -10,6 +10,8 @@ type TCursorCointainer = {
 
 export const CursorContainer = styled.div<TCursorCointainer>`
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1200;
   width: 80px;
   height: 80px;
@@ -52,4 +54,4 @@ export const TestWrapper = styled.div`
   width: 150px;
   height: 150px;
   background: red;
-  `
+`

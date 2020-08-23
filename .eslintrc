@@ -67,7 +67,7 @@
             "group": "sibling"
           },
           {
-            "pattern": "@context/**",
+            "pattern": "@contexts",
             "group": "sibling"
           },
           {
