@@ -42,7 +42,7 @@ export const Sticky: FC<TSticky> = ({
   const mouseEnterHandler =  () => {
     eventDispatcher(document, 'cursor', {
       label: label,
-      size: 2,
+      size: 1.5,
       isHovering: isHoverable ? true : false,
     })
   }
