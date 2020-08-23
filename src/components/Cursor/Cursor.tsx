@@ -2,7 +2,7 @@ import gsap from 'gsap'
 import React, { useState, useEffect, useRef, FC } from 'react'
 
 import { fromEvent, animationFrameScheduler } from 'rxjs'
-import { subscribeOn, takeUntil, repeatWhen } from 'rxjs/operators'
+import { subscribeOn } from 'rxjs/operators'
 
 import * as Styled from './cursor.styled'
 
