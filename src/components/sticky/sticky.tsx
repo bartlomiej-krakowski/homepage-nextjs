@@ -18,6 +18,7 @@ export const Sticky: FC<TSticky> = ({
   label,
 }) => {
   const wrapperEl = useRef<HTMLDivElement>(null)
+  const innerEl = useRef<HTMLDivElement>(null)
 
   const parallaxIt = (e: MouseEvent, target: HTMLDivElement, movement: number) => {
     const boundingRect = target.getBoundingClientRect()
@@ -27,7 +28,6 @@ export const Sticky: FC<TSticky> = ({
     gsap.to(target, 0.3, {
       x: (relX - boundingRect.width / 2) / boundingRect.width * movement,
       y: (relY - boundingRect.height / 2) / boundingRect.height * movement,
-      ease: 'power2.easeOut'
     })
   }
 
@@ -35,11 +35,11 @@ export const Sticky: FC<TSticky> = ({
     gsap.to(target, 0.3, {
       x: 0,
       y: 0,
-      ease: 'power2.easeOut'
     })
   }
 
   const mouseEnterHandler =  () => {
+    console.log('mouseEnterHandler')
     eventDispatcher(document, 'cursor', {
       label: label,
       size: 1.5,
@@ -60,18 +60,24 @@ export const Sticky: FC<TSticky> = ({
     const mouseenter$ = fromEvent<MouseEvent>(wrapperEl.current, 'mouseenter')
     const mouseleave$ = fromEvent<MouseEvent>(wrapperEl.current, 'mouseleave')
 
-    mousemove$.pipe(
-      subscribeOn(animationFrameScheduler),
-      takeUntil(mouseleave$),
-      repeatWhen(() => mouseenter$)
-    ).subscribe(event => {
-      parallaxIt(event, wrapperEl.current, 50)
-    })
+    // mousemove$.pipe(
+    //   subscribeOn(animationFrameScheduler),
+    //   takeUntil(mouseleave$),
+    //   repeatWhen(() => mouseenter$)
+    // ).subscribe(event => {
+    //   parallaxIt(event, wrapperEl.current, 50)
+    // })
 
-    mouseleave$.subscribe(() => resetParallax(wrapperEl.current))
+    // mouseleave$.subscribe(() => resetParallax(wrapperEl.current))
   }
 
   useEffect(() => {
+    eventDispatcher(document, 'cursor', {
+      sticky: {
+        parent: wrapperEl,
+        inner: innerEl
+      },
+    })
     setSubscription()
   }, [])
 
@@ -81,7 +87,9 @@ export const Sticky: FC<TSticky> = ({
       onMouseEnter={mouseEnterHandler}
       onMouseLeave={mouseLeaveHandler}
     >
-      {children}
+      <Styled.Inner ref={innerEl}>
+        {children}
+      </Styled.Inner>
     </Styled.Wrapper>
   )
 }

@@ -7,3 +7,8 @@ export const Wrapper = styled.div`
   height: 150px;
   padding: 40px;
 `
+
+export const Inner = styled.div`
+  width: 100%;
+  height: 100%;
+`
