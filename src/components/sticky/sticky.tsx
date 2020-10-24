@@ -1,9 +1,10 @@
 import gsap from 'gsap'
-import React, { FC, useRef, useEffect } from 'react'
+import React, { FC, useRef, useEffect, useState } from 'react'
 import { fromEvent, animationFrameScheduler } from 'rxjs'
 import { subscribeOn, takeUntil, repeatWhen } from 'rxjs/operators'
 
-import { eventDispatcher } from '@utils/event-dispatcher/event-dispatcher'
+import { eventDispatcher } from '@utils'
+import { StickyCursorContext } from '@contexts'
 
 import * as Styled from './sticky.styled'
 
@@ -81,15 +82,29 @@ export const Sticky: FC<TSticky> = ({
     setSubscription()
   }, [])
 
+  const [stickyElements, setStickyElements] = useState(null)
+
   return (
-    <Styled.Wrapper
-      ref={wrapperEl}
-      onMouseEnter={mouseEnterHandler}
-      onMouseLeave={mouseLeaveHandler}
-    >
-      <Styled.Inner ref={innerEl}>
-        {children}
-      </Styled.Inner>
-    </Styled.Wrapper>
+    <StickyCursorContext.Consumer>
+      {({stickyElements, setStickyElements}) => {
+      console.log('stickyElements', stickyElements)
+      const test = [...stickyElements, wrapperEl]
+      console.log('test', test)
+      // setStickyElements([...stickyElements, wrapperEl])
+
+        return (
+          <Styled.Wrapper
+            ref={wrapperEl}
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
+            >
+            <Styled.Inner ref={innerEl}>
+              {children}
+            </Styled.Inner>
+          </Styled.Wrapper>
+        )
+        }}
+    </StickyCursorContext.Consumer>
   )
 }
+

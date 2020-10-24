@@ -53,8 +53,6 @@ export const Cursor: FC = () => {
   const [cursorSubscription, setCursorSubscription] = useState(null)
 
   const updatePosition = (event: MouseEvent) => {
-    console.log('updatePosition')
-
     setCursorPositon({
       top: event.clientY,
       left: event.clientX,
@@ -117,14 +115,14 @@ export const Cursor: FC = () => {
     const mousemove$ = fromEvent<MouseEvent>(document, 'mousemove')
     const mousedown$ = fromEvent<MouseEvent>(document, 'mousedown')
 
-    mousedown$.subscribe(() => mouseDownHandler())
+    // mousedown$.subscribe(() => mouseDownHandler())
 
     setCursorSubscription(mousemove$.pipe(
       subscribeOn(animationFrameScheduler),
     ).subscribe(event => updatePosition(event)))
 
     const cursor$ = fromEvent<MouseEvent>(document, 'cursor')
-    cursor$.subscribe((event) => cursorHandler(event))
+    // cursor$.subscribe((event) => cursorHandler(event))
   }
 
   useEffect(() => {

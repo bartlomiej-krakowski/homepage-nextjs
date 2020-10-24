@@ -55,15 +55,23 @@
         },
         "pathGroups": [
           {
+            "pattern": "@components/**",
+            "group": "sibling"
+          },
+          {
             "pattern": "@components",
             "group": "sibling"
           },
           {
-            "pattern": "@utils",
+            "pattern": "@static/**",
             "group": "sibling"
           },
           {
-            "pattern": "@static/**",
+            "pattern": "@static",
+            "group": "sibling"
+          },
+          {
+            "pattern": "@contexts/**",
             "group": "sibling"
           },
           {
@@ -84,14 +92,6 @@
           },
           {
             "pattern": "@helpers",
-            "group": "sibling"
-          },
-          {
-            "pattern": "@mocks/**",
-            "group": "sibling"
-          },
-          {
-            "pattern": "@mocks",
             "group": "sibling"
           },
           {

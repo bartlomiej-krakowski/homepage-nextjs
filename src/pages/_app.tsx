@@ -1,11 +1,12 @@
 import React from 'react'
-import { Cursor } from '@components/cursor/cursor'
+import { CursorWrapper } from '@components'
 import { Layout } from '@layout'
 
 const App = ({ Component, pageProps }) => (
   <Layout>
-    <Cursor />
-    <Component {...pageProps} />
+    <CursorWrapper>
+      <Component {...pageProps} />
+    </CursorWrapper>
   </Layout>
 )
 

@@ -1,2 +1,3 @@
 export { Cursor } from './cursor/cursor'
-export { Hover } from './hover/hover'
+export { CursorWrapper } from './cursor-wrapper/cursor-wrapper'
+export { Sticky } from './sticky/sticky'
